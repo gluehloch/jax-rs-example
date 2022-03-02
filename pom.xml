@@ -43,18 +43,27 @@
     </build>
 
     <dependencies>
-    <!--
-        <dependency>
-            <groupId>org.glassfish.jersey.archetypes</groupId>
-            <artifactId>jersey-quickstart-grizzly2</artifactId>
-            <version>3.0.4</version>
-        </dependency>
-        -->
+        <!-- JAX RS API -->
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
             <artifactId>jakarta.ws.rs-api</artifactId>
             <version>3.0.0</version>
         </dependency>
+
+        <!-- Glassfish Jersey Server Implementation -->
+        <dependency>
+            <groupId>org.glassfish.jersey.archetypes</groupId>
+            <artifactId>jersey-quickstart-grizzly2</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish.grizzly/grizzly-http-server -->
+        <dependency>
+            <groupId>org.glassfish.grizzly</groupId>
+            <artifactId>grizzly-http-server</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.slf4j</groupId>
