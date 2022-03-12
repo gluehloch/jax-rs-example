@@ -22,10 +22,10 @@ public class RestEndpoint {
      * @return String that will be returned as a text/plain response.
      */
     @GET
-    @Path("/text")
+    @Path("/helloworld")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Got it!";
+    public String helloWorld() {
+        return "Hello World!";
     }
 
 }
