@@ -10,6 +10,12 @@
 
     <name>JAX RS Examples</name>
     <inceptionYear>2022</inceptionYear>
+    
+    <properties>
+        <jersey.version>3.0.4</jersey.version>
+        <junit.jupiter.version>5.4.2</junit.jupiter.version>
+        <junit.platform.version>1.2.0</junit.platform.version>
+    </properties>
 
     <build>
         <plugins>
@@ -79,23 +85,24 @@
             <version>1.7.32</version>
         </dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.test-framework/jersey-test-framework-core -->
+
+        <!-- Glassfish-Jersey Test Framework -->
 		<dependency>
 		    <groupId>org.glassfish.jersey.test-framework</groupId>
 		    <artifactId>jersey-test-framework-core</artifactId>
-		    <version>3.0.4</version>
+		    <version>${jersey.version}</version>
+		    <scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.test-framework.providers/jersey-test-framework-provider-grizzly2 -->
 		<dependency>
 		    <groupId>org.glassfish.jersey.test-framework.providers</groupId>
 		    <artifactId>jersey-test-framework-provider-grizzly2</artifactId>
-		    <version>3.0.4</version>
+		    <version>${jersey.version}</version>
 		    <scope>test</scope>
 		</dependency>
 		<dependency>
 		    <groupId>org.glassfish.jersey.inject</groupId>
 		    <artifactId>jersey-hk2</artifactId>
-		    <version>3.0.4</version>
+		    <version>${jersey.version}</version>
 		    <scope>test</scope>
 		</dependency>
 
@@ -116,8 +123,5 @@
         </dependency>
     </dependencies>
     <description>JAX-RS examples</description>
-    <properties>
-        <junit.jupiter.version>5.4.2</junit.jupiter.version>
-        <junit.platform.version>1.2.0</junit.platform.version>
-    </properties>
+
 </project>
