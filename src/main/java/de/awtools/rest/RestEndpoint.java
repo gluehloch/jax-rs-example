@@ -8,7 +8,9 @@ import java.io.Reader;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
@@ -38,8 +40,8 @@ public class RestEndpoint {
 
     @GET
     @Path("/markdown")
-    @Produces(MediaType.TEXT_HTML)
-    public String markdown() throws IOException {
+    @Produces({MediaType.TEXT_HTML, })
+    public Response markdown() throws IOException {
         InputStream resourceAsStream = this.getClass().getResourceAsStream("/de/awtools/markdown/markdown-example.md");
         Reader targetReader = new InputStreamReader(resourceAsStream);
 
@@ -47,7 +49,12 @@ public class RestEndpoint {
         Node document = parser.parseReader(targetReader);
 
         HtmlRenderer renderer = HtmlRenderer.builder().build();
-        return renderer.render(document);  // "<p>This is <em>Sparta</em></p>\n"
+        // return renderer.render(document);  // "<p>This is <em>Sparta</em></p>\n"
+
+        return Response.status(Response.Status.OK)
+                .entity(renderer.render(document))
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_HTML_TYPE.withCharset("utf-8"))
+                .build();
     }
 
 }
