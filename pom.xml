@@ -106,6 +106,13 @@
             <version>${jersey.version}</version>
         </dependency>
 
+<!-- Markdown -->
+<dependency>
+    <groupId>org.commonmark</groupId>
+    <artifactId>commonmark</artifactId>
+    <version>0.18.1</version>
+</dependency>
+
         <!-- Glassfish-Jersey Test Framework -->
 		<dependency>
 		    <groupId>org.glassfish.jersey.test-framework</groupId>
