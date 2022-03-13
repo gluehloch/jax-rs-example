@@ -7,5 +7,13 @@ https://eclipse-ee4j.github.io/jersey.github.io/documentation/latest3x/modules-a
 ## How to use
 
 ```
+mvn clean package
+```
+
+```
+java -jar .\target\jax-rs-examples-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+```
 curl http://localhost:9998/notifications/helloworld
 ```
