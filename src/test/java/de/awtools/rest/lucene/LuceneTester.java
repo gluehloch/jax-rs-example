@@ -47,6 +47,7 @@ public class LuceneTester {
         for (ScoreDoc scoreDoc : hits.scoreDocs) {
             Document doc = searcher.getDocument(scoreDoc);
             System.out.println("File: " + doc.get(Indexer.FILE_PATH));
+            // TODO System.out.println("Occurrences of \"" + term.text() + "\" in \"" + term.field() + "\" = " + freq);
         }
     }
 
